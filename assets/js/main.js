@@ -188,6 +188,30 @@
   window.addEventListener("load", initSwiper);
 
   /**
+   * Contact form WhatsApp redirect
+   */
+  document.querySelectorAll('.whatsapp-form').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const name = form.querySelector('input[name="name"]').value.trim();
+      const email = form.querySelector('input[name="email"]').value.trim();
+      const subjectField = form.querySelector('input[name="subject"]');
+      const subject = subjectField ? subjectField.value.trim() : 'Permintaan Layanan Souvenir';
+      const message = form.querySelector('textarea[name="message"]').value.trim();
+
+      const text = `Halo BrandGift, saya ingin bertanya tentang souvenir kantor.` +
+        `%0A%0ANama: ${encodeURIComponent(name)}` +
+        `%0AEmail: ${encodeURIComponent(email)}` +
+        `%0ASubjek: ${encodeURIComponent(subject)}` +
+        `%0APesan: ${encodeURIComponent(message)}`;
+
+      window.location.href = `https://wa.me/62895639068080?text=${text}`;
+    });
+  });
+
+  /**
    * Frequently Asked Questions Toggle
    */
   document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {
