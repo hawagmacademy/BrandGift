@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://souvenirpro.co.id/sitemap.xml
