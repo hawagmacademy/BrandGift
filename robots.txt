@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://souvenirpro.co.id/sitemap.xml
+Sitemap: https://brand-gift.vercel.app/sitemap.xml
